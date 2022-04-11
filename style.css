@@ -1,0 +1,99 @@
+/* 
+
+    position
+    flexbox
+    gridbox
+    margin
+    padding
+    responsive layout
+
+*/
+
+/* 
+
+    transform => 
+
+    translate => элементийг зөөн
+    rotate => элементийг эргүүлнэ
+    scale => элементийн хэмжээг өөрчилнө
+    skew => элементийг налуу болгоно
+
+    perspective
+
+*/
+
+.wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    gap: 1rem;
+}
+
+.box {
+    width: 200px;
+    height: 350px;
+    perspective: 800px;
+}
+
+.box .item {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(110, 168, 44);
+    animation: ergeh 1s linear infinite;
+    clip-path: polygon(0% 0 , 100% 0% , 50% 100%);
+    transition: 1.5s ease-in-out;
+}
+.box .item:hover{
+    position: absolute;
+    top: -50%;
+    background-color: rgb(82, 13, 13);
+}
+.box-1 {
+    width: 200px;
+    height: 350px;
+    perspective: 800px;
+    position: absolute;
+    
+
+}
+
+
+.box .item-1{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(105, 49, 62);
+    animation: erge 1s linear infinite;
+    clip-path: polygon(50% 0 , 100% 100% ,  0% 100%);
+    position: absolute;
+    left: 50%;
+    top: 0%;
+}
+.box .item-1:hover{
+    background-color: black;
+    cursor: pointer;
+}
+
+/* 
+.box:hover .item {
+    transform: rotateY(360deg);
+} */
+
+@keyframes ergeh {
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+} 
+ @keyframes erge {
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(-360deg);
+    }
+} 
